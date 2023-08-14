@@ -28,13 +28,16 @@ allprojects {
 	group "org.springframework.boot"
 
 	repositories {
-		mavenCentral()
+		maven {url 'https://maven.aliyun.com/repository/central'}
+		maven {url 'https://maven.aliyun.com/repository/public/'}
+
 		if (version.contains('-')) {
 			maven { url "https://repo.spring.io/milestone" }
 		}
 		if (version.endsWith('-SNAPSHOT')) {
 			maven { url "https://repo.spring.io/snapshot" }
 		}
+
 	}
 
 	configurations.all {
