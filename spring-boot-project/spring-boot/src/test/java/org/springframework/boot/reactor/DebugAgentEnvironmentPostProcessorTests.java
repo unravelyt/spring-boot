@@ -30,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * @author Brian Clozel
  */
-@ClassPathOverrides("io.projectreactor:reactor-tools:3.3.0.RELEASE")
+//@ClassPathOverrides("io.projectreactor:reactor-tools:3.3.0.RELEASE")
 class DebugAgentEnvironmentPostProcessorTests {
 
 	static {
