@@ -43,6 +43,7 @@ public class MainMethodRunner {
 	}
 
 	public void run() throws Exception {
+		//在run()方法里通过反射拿到了项目的启动类的main方法，从而启动本地项目
 		Class<?> mainClass = Class.forName(this.mainClassName, false, Thread.currentThread().getContextClassLoader());
 		Method mainMethod = mainClass.getDeclaredMethod("main", String[].class);
 		mainMethod.setAccessible(true);

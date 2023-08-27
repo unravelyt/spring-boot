@@ -162,12 +162,14 @@ class BeanDefinitionLoader {
 	}
 
 	private void load(Class<?> source) {
+		// 判断是否存在 groovy 加载方式
 		if (isGroovyPresent() && GroovyBeanDefinitionSource.class.isAssignableFrom(source)) {
 			// Any GroovyLoaders added in beans{} DSL can contribute beans here
 			GroovyBeanDefinitionSource loader = BeanUtils.instantiateClass(source, GroovyBeanDefinitionSource.class);
 			((GroovyBeanDefinitionReader) this.groovyReader).beans(loader.getBeans());
 		}
 		if (isEligible(source)) {
+			// 将source就是启动类的class，注册到annotatedReader中。annotatedReader类型是AnnotatedBeanDefinitionReader。
 			this.annotatedReader.register(source);
 		}
 	}

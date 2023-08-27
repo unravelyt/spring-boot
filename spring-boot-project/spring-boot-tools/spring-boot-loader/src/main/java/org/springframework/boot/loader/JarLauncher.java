@@ -62,6 +62,7 @@ public class JarLauncher extends ExecutableArchiveLauncher {
 	}
 
 	public static void main(String[] args) throws Exception {
+		//jar包启动类，这是java规定的字段，存在这个字段的情况下， 在java -jar时，jar包才会运行起来
 		new JarLauncher().launch(args);
 	}
 
